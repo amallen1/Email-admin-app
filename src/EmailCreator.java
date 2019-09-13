@@ -9,8 +9,7 @@ import java.util.Random;
 
 public class EmailCreator {
 
-	//Encapsulation - private
-	
+
 	private String firstName;
 	private String lastName;
 	private String password;
@@ -37,11 +36,9 @@ public class EmailCreator {
 	public EmailCreator(String firstName, String lastName, int dptCode) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		//System.out.println("Email created: " + this.firstName +" " + this.lastName);
 		
 		//Asks for department
 		this.department = setDepartment(dptCode);
-		//System.out.println("Department: " + department);
 		
 		//Generates default random password
 		this.password = randomPassword(defaultPasswordLength);
@@ -49,9 +46,7 @@ public class EmailCreator {
 		
 		//Combine elements to generate email
 		this.email = firstName.toLowerCase() + "."+ lastName.toLowerCase() +"@"+ department.toLowerCase()+ "."+ company;
-		//System.out.println(email);
 		
-		showInfo();
 		
 	}
 	
@@ -60,11 +55,7 @@ public class EmailCreator {
 	 * @return department
 	 */
 	private String setDepartment(int dptCode) {
-		
-		//System.out.print(" 1. Sales\n 2. Development\n 3. Accounting\n 0. None\n Enter the department: ");
-		//Scanner in = new Scanner(System.in);
-		//int department = in.nextInt();
-		
+	
 		switch (dptCode){
 			case 1: 
 				department = "sales";
@@ -80,19 +71,7 @@ public class EmailCreator {
 		}
 		
 		return department;
-		
-		
-		/*
-		if(department == "1") {
-			return "Sales";
-		}else if(department == "2") {
-			return "Development";
-		}else if(department == "3") {
-			return "Accounting";
-		}else {
-			return "";
-		}*/
-			
+	
 	}
 	
 	/**
@@ -119,12 +98,31 @@ public class EmailCreator {
 
 	}
 	
+
+	/**
+	 * Getter method
+	 * @return password
+	 */
+	public String password() {
+		return password;
+	}
+	
+	/**
+	 * Shows the employee's name and generated email
+	 * @return
+	 */
+	public String showInfo() {
+		return "Display name: " + firstName + " " +lastName +
+				"\nCompany email: " + email;
+				
+	}
+	
+
+	/*
 	//Set mailbox capacity
 	public void setMailboxCapacity(int capacity) {
 		this.mailboxCapacity = capacity;
 	}
-	
-	
 	
 	//Set the alternate email
 	public void setAlternateEmail(String altEmail) {
@@ -144,15 +142,6 @@ public class EmailCreator {
 	public String getAltEmail() {
 		return alternateEmail;
 	}
-	
-	public String password() {
-		return password;
-	}
-	
-	public String showInfo() {
-		return "Display name: " + firstName + " " +lastName +
-				"\nCompany email: " + email;//+
-				//"\nMailbox capacity: " + mailboxCapacity + "mb";
-	}
+	*/
 	
 }
