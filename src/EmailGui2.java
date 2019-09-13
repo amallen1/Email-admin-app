@@ -94,7 +94,7 @@ public class EmailGui2 extends JFrame {
 		JButton btnNewButton = new JButton("Enter");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//contentPane.setVisible(false);
+				
 				String firstName = firstNameField.getText();
 				String lastName = lastNameField.getText();
 				String dptString = dptCodeTextField.getText();

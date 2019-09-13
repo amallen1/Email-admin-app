@@ -9,7 +9,6 @@ import java.util.Random;
 
 public class EmailCreator {
 
-
 	private String firstName;
 	private String lastName;
 	private String password;
@@ -42,10 +41,10 @@ public class EmailCreator {
 		
 		//Generates default random password
 		this.password = randomPassword(defaultPasswordLength);
-		System.out.println("Password: " + password);
 		
 		//Combine elements to generate email
 		this.email = firstName.toLowerCase() + "."+ lastName.toLowerCase() +"@"+ department.toLowerCase()+ "."+ company;
+		
 		
 		
 	}
@@ -113,7 +112,8 @@ public class EmailCreator {
 	 */
 	public String showInfo() {
 		return "Display name: " + firstName + " " +lastName +
-				"\nCompany email: " + email;
+				"\nCompany email: " + email +
+				"\nPassword: " + password;
 				
 	}
 	
